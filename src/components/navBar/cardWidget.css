@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+.iconoC{
+    width: 3.2vw;
+    margin-left: 35rem;
+}
+
+p{
+    margin-right: 3rem;
+    color: rgb(126, 126, 150);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
