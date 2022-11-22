@@ -1,23 +1,23 @@
-import React from 'react'
-import iconoLourdes from "./../../iconoLourdes.png"
+import iconoLourdes from "./iconoLourdes.png"
 import "./navBar.css"
 import CardWidget from './CardWidget'
 const NavBar = () => {
   return (
     <>
-    <div className='ordenGral'>
-        <img src={iconoLourdes} className="iconoL"/>
-        <ul>
-            <li><a href='#'>2021</a></li>
-            <li><a href='#'>2020</a></li> 
-            <li><a href='#'>2019</a></li>
-            <li><a href='#'>2018</a></li>
-            <li><a href='#'>2017</a></li> 
-            <li><a href='#'>2016</a></li>
-        </ul>
-        <CardWidget />
-    </div>
-
+    <nav>
+      <div className='ordenGral'>
+          <img src={iconoLourdes} className="iconoL" alt='logo de tienda Lourdes Miazzo Obras'/>
+          <ul>
+              <li><a href='#h'>2021</a></li>
+              <li><a href='#s'>2020</a></li> 
+              <li><a href='#s'>2019</a></li>
+              <li><a href='#d'>2018</a></li>
+              <li><a href='#f'>2017</a></li> 
+              <li><a href='#v'>2016</a></li>
+          </ul>
+          <CardWidget />
+      </div>
+    </nav>
     </>
   )
 }

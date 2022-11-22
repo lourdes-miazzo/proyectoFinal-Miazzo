@@ -1,17 +1,14 @@
-import React from 'react'
-import Greetings from './Greetings'
 import "./itemListContainer.css"
 
-function ItemListcontainer() {
+function ItemListContainer({greeting}) {
+  
   return (
     <>
     <div className='background'>
-    <Greetings nombre="Ana" genero="a"/>
-    <Greetings nombre="Pedro" genero="o"/>
-    <Greetings />
+    <h3>{greeting}</h3>
     </div>
     </>
   )
 }
 
-export default ItemListcontainer
+export default ItemListContainer
