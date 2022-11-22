@@ -2,7 +2,7 @@ import './App.css';
 import ItemListContainer from './components/container/ItemListContainer';
 import NavBar from './components/navBar/NavBar';
 
-function App() {
+const App = ()=> {
   return (
     <>
     <NavBar/>

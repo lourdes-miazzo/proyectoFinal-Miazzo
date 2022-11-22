@@ -1,6 +1,6 @@
 import "./itemListContainer.css"
 
-function ItemListContainer({greeting}) {
+const ItemListContainer=({greeting})=> {
   
   return (
     <>
