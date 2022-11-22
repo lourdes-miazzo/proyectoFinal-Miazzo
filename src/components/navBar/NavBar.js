@@ -1,6 +1,6 @@
 import iconoLourdes from "./iconoLourdes.png"
 import "./navBar.css"
-import CardWidget from './CardWidget'
+import CartWidget from './CartWidget'
 const NavBar = () => {
   return (
     <>
@@ -15,7 +15,7 @@ const NavBar = () => {
               <li><a href='#f'>2017</a></li> 
               <li><a href='#v'>2016</a></li>
           </ul>
-          <CardWidget />
+          <CartWidget />
       </div>
     </nav>
     </>
