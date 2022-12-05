@@ -1,0 +1,33 @@
+.card{
+    background-color: rgb(181, 179, 187); 
+    padding-top: 8rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.4);
+    margin: 1rem;
+    border-top-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+}
+
+
+.estiloBot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3rem;
+}
+button{
+    background-color: rgb(242, 241, 247);
+    padding: 1rem;
+    margin: 0.7rem;
+    border-radius: 0.3rem;
+    color: rgb(70, 70, 114);
+}
+
+input{
+    background-color:  rgb(70, 70, 114);
+    width: 1.5rem;
+    color:  rgb(242, 241, 247);
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+} 

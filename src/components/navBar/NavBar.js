@@ -1,19 +1,21 @@
 import iconoLourdes from "./iconoLourdes.png"
 import "./navBar.css"
-import CartWidget from './CartWidget'
+import CartWidget from "../Cart/CartWidget"
+import { Link } from "react-router-dom"
 const NavBar = () => {
   return (
     <>
     <nav>
       <div className='ordenGral'>
-          <img src={iconoLourdes} className="iconoL" alt='logo de tienda Lourdes Miazzo Obras'/>
+          <Link to="/"><img src={iconoLourdes} className="iconoL" alt='logo de tienda Lourdes Miazzo Obras'/></Link>
           <ul>
-              <li><a href='#h'>2021</a></li>
-              <li><a href='#s'>2020</a></li> 
-              <li><a href='#s'>2019</a></li>
-              <li><a href='#d'>2018</a></li>
-              <li><a href='#f'>2017</a></li> 
-              <li><a href='#v'>2016</a></li>
+              <li><Link to="/category/2022">2022</Link></li>
+              <li><Link to="/category/2021">2021</Link></li>
+              <li><Link to="/category/2020">2020</Link></li> 
+              <li><Link to="/category/2019">2019</Link></li>
+              <li><Link to="/category/2018">2018</Link></li>
+              <li><Link to="/category/2017">2017</Link></li> 
+              <li><Link to="/category/2016">2016</Link></li>
           </ul>
           <CartWidget />
       </div>

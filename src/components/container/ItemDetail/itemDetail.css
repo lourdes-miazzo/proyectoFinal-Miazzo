@@ -1,0 +1,30 @@
+.backCardItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181, 179, 187); 
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 65vw;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+}
+
+
+img{
+    width: 50vw;
+    
+}
+
+h3{
+    color: rgb(96, 96, 119);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+p{
+    color: rgb(88, 88, 107);
+    font-family: 'Roboto', sans-serif;
+}
