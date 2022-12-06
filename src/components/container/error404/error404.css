@@ -1,0 +1,29 @@
+.orgError{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 200, 218); 
+    margin-top: 1rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+}
+
+.imgError{
+    width:40vw;
+}
+
+.buttonError{
+    align-self: flex-end;
+    margin-left: 22rem;
+}
+
+h2{
+    color: rgb(96, 96, 119);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}

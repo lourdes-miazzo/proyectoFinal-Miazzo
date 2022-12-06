@@ -10,7 +10,7 @@ const Item = ({data}) => {
     <div className='textDesign'>
       <h3>{data.titulo}</h3>
     </div>
-    <Link to={`/detail/${data.id}`}><button>Ver más detalles</button></Link>
+    <Link to={`/item/${data.id}`}><button>Ver más detalles</button></Link>
     </div>
     </>
   )

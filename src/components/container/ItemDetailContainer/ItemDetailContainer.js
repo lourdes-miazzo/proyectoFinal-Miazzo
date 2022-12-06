@@ -4,20 +4,19 @@ import { useParams } from 'react-router-dom'
 
 
 const ItemDetailContainer = () => {
-  const [data, setData]= useState([])
+  const [data, setData]= useState({})
   const {id}= useParams()  
 
   useEffect(()=>{
-  fetch("/data/fakeAPI.json")
+  fetch("../data/fakeAPI.json")
   .then((res)=> res.json())
-  .then((obj)=> setData(obj))
+  .then((obj)=> setData(obj.find((item)=> item.id === Number(id))))
   }, [id]) 
- /*  const resultado = data.filter((item) => item.id.toString() === categoriaId.tostring()) */
   return (
     <div>
-        <ItemDetail />
+        <ItemDetail data={data} />
     </div>
   )
 }
 
-export default ItemDetailContainer 
+export default ItemDetailContainer
