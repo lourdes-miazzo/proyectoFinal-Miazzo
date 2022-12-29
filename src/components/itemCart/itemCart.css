@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.orgItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backCardItemCart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(181, 179, 187); 
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 65vw;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+    margin-top: 2rem;
+}
+
+
+.imgDetail{
+    width: 40vw;   
+}
+
+.textDesign{
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h3{
+    color: rgb(96, 96, 119);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+p{
+    color: rgb(88, 88, 107);
+    font-family: 'Roboto', sans-serif;
+    margin-left: 1rem;
+}

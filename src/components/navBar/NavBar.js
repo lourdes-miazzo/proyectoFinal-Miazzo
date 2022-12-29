@@ -17,7 +17,7 @@ const NavBar = () => {
               <li><NavLink to="/category/2017">2017</NavLink></li> 
               <li><NavLink to="/category/2016">2016</NavLink></li>
           </ul>
-          <CartWidget />
+              <CartWidget />
       </div>
     </nav>
     </>

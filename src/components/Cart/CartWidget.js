@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom"
 import "./cartWidget.css"
 import iconoCarrito from "./iconoCarrito.png"
+import { useCartContext } from "../../context/CartContext"
+
 const CartWidget= ()=> {
+  const {totalArt} = useCartContext()
   return (
     <>
-      <a href="#q"><img src={iconoCarrito} className="iconoC" alt='carrito de compras'/></a>
-      <p>2</p>
+      <Link to="/cart"><img src={iconoCarrito} className="iconoC" alt='carrito de compras'/></Link>
+      <p>{ totalArt() || ""}</p>
     </>
   )
 }

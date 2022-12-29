@@ -1,46 +1,56 @@
 import "./itemListContainer.css"
-import ItemCount from "../ItemCount/ItemCount"
 import React, {useState, useEffect} from "react"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom" 
-
+import {getDocs, getFirestore, collection} from 'firebase/firestore'
+import SquareLoader from "react-spinners/SquareLoader";
 
 const ItemListContainer=({greeting})=> {
 
 const [data, setData]= useState([])
+const [loading, setLoading]=useState(false)
 const {categoryid}= useParams()  
 
-useEffect(() => {
-  obtDatos()
-  
-}, [categoryid])    
-
-const obtDatos= async()=>{
-    const datos = await fetch("../data/fakeAPI.json")
-    const data = await datos.json()
+useEffect(()=>{ 
+ setLoading(true)
+const baseDatos = getFirestore()
+const coleccObras = collection(baseDatos, 'obras')
+getDocs(coleccObras).then((snapshot)=>{
+  const obras = snapshot.docs.map((doc)=>({
+    id : doc.id,
+    ...doc.data()
+  }))
+  setLoading(false)
   if(categoryid){
-    setData(data.filter(obra=> obra.anio === categoryid))
+    setData(obras.filter(obra=> obra.anio === Number(categoryid)))
   }else{
-    setData(data)
+    setData(obras)
   }
-}
+})
+}, [categoryid])
 
-const onAdd = (quantity)=>{
-  console.log(`Compraste ${quantity} unidades, muchas gracias!`)
 
-  }
   return (
     <>
-      <h3>{greeting}</h3>
-      <div className="orgCarrito">
-        <ItemCount initial={1} stock={14} onAdd={onAdd}/>
-        <ItemCount initial={1} stock={6} onAdd={onAdd}/>
+     {
+      loading 
+      ?
+      <div className="loading">
+        <SquareLoader color="#464672"  size={90} cssOverride={{ marginTop : "14rem"}}/>
+        <h3>Cargando...</h3>
       </div>
-      <div className="orgItems">
-      <ItemList data={data}/>
+      :
+      <div>
+        <div className="orgCarrito">
+        </div>
+        <div className="orgItems">
+        <ItemList data={data}/>
+        </div>
       </div>
+      }
     </>
   )
 }
+
 
 export default ItemListContainer
