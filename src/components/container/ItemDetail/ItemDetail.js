@@ -32,12 +32,14 @@ const ItemDetail = ({data}) => {
           <p>Tamaño: {data.tamaño}</p>
           <p>Precio: ${data.precio}</p>
           <p>Stock: {data.stock}</p>
-            {enviarACarrito 
-            ? 
-            <div><Link to="/cart"><button>Finalizar tu compra</button></Link>
-            <Link to="/"><button>Continuar comprando</button></Link> </div>
-            : 
-            <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>}
+            {
+              enviarACarrito 
+              ? 
+              <div><Link to="/cart"><button>Finalizar tu compra</button></Link>
+              <Link to="/"><button>Continuar comprando</button></Link> </div>
+              : 
+              <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>
+            }
         </div>
       </div>
       </div> 

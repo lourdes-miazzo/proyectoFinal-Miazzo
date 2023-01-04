@@ -55,35 +55,36 @@ const Formulario = () => {
     return (
         <>
             <div>
-            {id !== undefined 
-            ?
-            <div className='orgFormCompleto'> 
-            <div className='backFormCompleto'>
-                <h2>Su pedido se ha enviado correctamente!</h2>
-                <h3>Pedido: {id}</h3>
-            </div>
-            </div> 
-            :
-            <div className='backForm'>
-                <h3>Completá tus datos</h3>
-                <form onSubmit={submitHandler}>
-                    <div>
-                        <label htmlFor='nombre'>Nombre y Apellido</label>
-                        <input name="nombre" id="nombre" value={form.nombre} onChange={changeHandler} />
-                    </div> 
-                    <div>
-                        <label htmlFor='email'>Email</label>
-                        <br></br>
-                        <input name="email" id="email" value={form.email} onChange={changeHandler}/>
-                    </div> 
-                    <div>
-                        <label htmlFor='telefono'>Número de teléfono</label>
-                        <br></br>
-                        <input name="telefono" id="telefono" value={form.mensaje} onChange={changeHandler}/>
-                    </div>
-                    <button>Enviar</button> 
-                </form>
-            </div> 
+            {
+                id !== undefined 
+                ?
+                <div className='orgFormCompleto'> 
+                <div className='backFormCompleto'>
+                    <h2>Su pedido se ha enviado correctamente!</h2>
+                    <h3>Orden: {id}</h3>
+                </div>
+                </div> 
+                :
+                <div className='backForm'>
+                    <h3>Completá tus datos</h3>
+                    <form onSubmit={submitHandler}>
+                        <div>
+                            <label htmlFor='nombre'>Nombre y Apellido</label>
+                            <input name="nombre" id="nombre" value={form.nombre} onChange={changeHandler} />
+                        </div> 
+                        <div>
+                            <label htmlFor='email'>Email</label>
+                            <br></br>
+                            <input name="email" id="email" value={form.email} onChange={changeHandler}/>
+                        </div> 
+                        <div>
+                            <label htmlFor='telefono'>Número de teléfono</label>
+                            <br></br>
+                            <input name="telefono" id="telefono" value={form.mensaje} onChange={changeHandler}/>
+                        </div>
+                        <button>Enviar</button> 
+                    </form>
+                </div> 
             }
             </div>
         </>
