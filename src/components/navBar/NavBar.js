@@ -1,6 +1,6 @@
 import iconoLourdes from "./iconoLourdes.png"
 import "./navBar.css"
-import CartWidget from "../Cart/CartWidget"
+import CartWidget from "../cartWidget/CartWidget"
 import { NavLink } from "react-router-dom"
 const NavBar = () => {
   return (

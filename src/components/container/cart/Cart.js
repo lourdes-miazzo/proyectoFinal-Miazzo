@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import { useCartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
-import ItemCart from '../../itemCart/ItemCart'
+import ItemCart from './../itemCart/ItemCart'
 import './cart.css'
 import Formulario from '../formulario/Formulario'
 
 const Cart = () => {
+  //funcion y estado de context
   const {cart, totalPrice} = useCartContext()
+  //estado y función para renderizar condicionalmente el formulario
   const [compForm, setCompForm] = useState(false)
   const renderCompForm= ()=>{
     setCompForm(true)

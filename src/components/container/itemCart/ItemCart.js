@@ -1,10 +1,11 @@
 import React from 'react'
-import { useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../../../context/CartContext'
 import './itemCart.css'
 
 
 const ItemCart = ({data}) => {
     const {removeArt, removerUnidad} = useCartContext()
+    //renderizado de la info de cada obra en el carrito, junto con los botones para eliminar por unidad o eliminar completamente la obra del mismo
   return (
     <>
     <div className='orgItem'>

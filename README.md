@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+![Logo de el ecommerce de Lourdes Miazzo](src/components/navBar/iconoLourdes.png)
+_Proyecto_: Simulación de e-commerce  para las obras de artista Lourdes Miazzo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Link_: [https://ecommerce-lourdes-miazzo-obras.vercel.app/]
 
-## Available Scripts
+_Realizado con_: React js, firestore, vercel
 
-In the project directory, you can run:
+_Resumen_: Proyecto realizado en el aprendizaje de React JS de la trayectoria Fullstack cursada en [**CoderHouse**](https://www.coderhouse.com/).  EL ejercicio final proponía la creación de un e-commerce por lo que se le da un énfasis especial al carrito de compras y en mostrar, en este caso, las obras según los años de produccion. Se incluye además una pequeña sección con bio y redes sociales de la artista para quienes deseen conocer sobre su recorrido y ver más imagenes de su producción.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Construcción del proyecto_: Se genera una división del proyecto en **componentes** lo que facilita el trabajo, permite su reutilización, y ayuda a individualizar y pensar la funcionalidad de cada pieza como un pequeño problema a resolver que además se vuelve facil de comprender, sin escribir códigos extensos. Agunos componentes se encargan de los procesos funcionales y lógicos; los conocidos como containers (ItemListContainer, ItemDetailContainer), y otros se llevan la parte más facil de solo mostrar contenido, los componentes presentacionales (ItemDetail, Item).
+La información de cada obra (imagen, tamaño, año de creación, etc) es guardada en **Firestore**, lo que permite incorporar nuevos datos de manera rápida y ágil.
+La informacion que se genera y guarda en carrito debe poder ser de fácil acceso a distintas secciones dentro de la App, por lo que todas las funciones (que implican agregar un producto, eliminar por unidad, mostrar la cantidad de obras en carrito, etc)y estados se guardan dentro de **context**, así por ej podemos acceder a esa informacion de manera sencilla desde CartWidget y ver reflejado entonces en NavBar el numero de obras compradas, o en el componente Cart renderizar las obras que se encuentran dentro del estado cart.
+Por otra parte se utilizan en varios sectores los **renderizados condicionales**, lo que le da al diseño cierto dinamismo. En la seccion Cart si el estado cart es un array vacío, nos avisa que el carrito no tiene obras y nos brinda un botón para redireccionarnos a home, en cambio si ya hay obras nos las renderiza junto con un botón de compra;, que al ser presionado vuelve true al estado compForm y eso entonces nos renderiza un formulario para guardar los datos del comprador y las obras compradas(orden) en una sección llamada 'orders' en Firestore.

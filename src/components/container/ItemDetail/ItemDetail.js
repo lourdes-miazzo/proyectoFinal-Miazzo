@@ -1,18 +1,21 @@
 import React, {useState} from 'react'
 import "./itemDetail.css"
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../itemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../../context/CartContext'
 
 
 
 const ItemDetail = ({data}) => {
-  const [irCarrito, setIrCarrito] =  useState(false)
+  const [enviarACarrito, setEnviarACarrito] =  useState(false)
 
   const {addArt}= useCartContext()
 
+  /*si se pulsa 'Agregar al carrito' en ItemCount el estado de enviarAcarrito cambia a verdadero y se renderizan
+  los botones de finalizar compra y continuar comprando, además se dispara la funcion addArt que capta la info de ItemCount
+  de la obra seleccionada y la cantidad de la misma  */
   const onAdd = (quantity)=>{
-    setIrCarrito(true)
+    setEnviarACarrito(true)
     addArt(data, quantity)
   }
   return (
@@ -29,13 +32,14 @@ const ItemDetail = ({data}) => {
           <p>Tamaño: {data.tamaño}</p>
           <p>Precio: ${data.precio}</p>
           <p>Stock: {data.stock}</p>
-            {irCarrito ? 
+            {enviarACarrito 
+            ? 
             <div><Link to="/cart"><button>Finalizar tu compra</button></Link>
-            <Link to="/"><button>Continuar comprando</button></Link> </div>: 
+            <Link to="/"><button>Continuar comprando</button></Link> </div>
+            : 
             <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>}
         </div>
       </div>
-      
       </div> 
     </>
   )

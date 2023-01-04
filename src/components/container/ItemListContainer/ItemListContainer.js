@@ -1,6 +1,6 @@
 import "./itemListContainer.css"
 import React, {useState, useEffect} from "react"
-import ItemList from "../ItemList/ItemList"
+import ItemList from "../itemList/ItemList"
 import { useParams } from "react-router-dom" 
 import {getDocs, getFirestore, collection} from 'firebase/firestore'
 import SquareLoader from "react-spinners/SquareLoader";
@@ -9,6 +9,9 @@ const ItemListContainer=({greeting})=> {
 
 const [data, setData]= useState([])
 const [loading, setLoading]=useState(false)
+
+/* se usa el parámetro para captar las distintas categorías de año y renderizar entonces
+soló las obras que coinciden con el año específico seleccionado */
 const {categoryid}= useParams()  
 
 useEffect(()=>{ 
@@ -27,6 +30,7 @@ getDocs(coleccObras).then((snapshot)=>{
     setData(obras)
   }
 })
+//cada vez que cambia categoryid el useEffect se vuelve a cargar y entonces se renderiza la obra de un año específico
 }, [categoryid])
 
 
