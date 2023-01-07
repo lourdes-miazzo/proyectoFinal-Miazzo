@@ -16,9 +16,9 @@ const {categoryid}= useParams()
 
 useEffect(()=>{ 
  setLoading(true)
-const baseDatos = getFirestore()
-const coleccObras = collection(baseDatos, 'obras')
-getDocs(coleccObras).then((snapshot)=>{
+const db = getFirestore()
+const itemsCollections = collection(db, 'obras')
+getDocs(itemsCollections).then((snapshot)=>{
   const obras = snapshot.docs.map((doc)=>({
     id : doc.id,
     ...doc.data()
@@ -30,27 +30,28 @@ getDocs(coleccObras).then((snapshot)=>{
     setData(obras)
   }
 })
-//cada vez que cambia categoryid el useEffect se vuelve a cargar y entonces se renderiza la obra de un año específico
+//cada vez que cambia categoryid el useEffect se vuelve a cargar y entonces se renderiza toda la obra de un año específico
 }, [categoryid])
 
 
   return (
     <>
-     {
-      loading 
-      ?
-      <div className="loading">
-        <SquareLoader color="#464672"  size={90} cssOverride={{ marginTop : "14rem"}}/>
-        <h3>Cargando...</h3>
-      </div>
-      :
-      <div>
-        <div className="orgCarrito">
+    <h3>{greeting}</h3>
+      {
+        loading 
+        ?
+        <div className="loading">
+          <SquareLoader color="#464672"  size={90} cssOverride={{ marginTop : "14rem"}}/>
+          <h3>Cargando...</h3>
         </div>
-        <div className="orgItems">
-        <ItemList data={data}/>
+        :
+        <div>
+          <div className="orgCarrito">
+          </div>
+          <div className="orgItems">
+          <ItemList data={data}/>
+          </div>
         </div>
-      </div>
       }
     </>
   )

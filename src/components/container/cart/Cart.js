@@ -6,11 +6,12 @@ import './cart.css'
 import Formulario from '../formulario/Formulario'
 
 const Cart = () => {
-  //funcion y estado de context
+  //funcion y estado traído de context
   const {cart, totalPrice} = useCartContext()
   //estado y función para renderizar condicionalmente el formulario
   const [compForm, setCompForm] = useState(false)
-  const renderCompForm= ()=>{
+
+  const buttonClickHandler = ()=>{
     setCompForm(true)
   }
   return (
@@ -33,7 +34,7 @@ const Cart = () => {
             <Formulario/>
             :
             <div>
-            <button onClick={renderCompForm} className='botonComprar'>Comprar</button>
+            <button onClick={buttonClickHandler} className='botonComprar'>Comprar</button>
             <div>{cart.map(obra => <ItemCart key={obra.id} data={obra}/>)}</div>
             </div>
           }

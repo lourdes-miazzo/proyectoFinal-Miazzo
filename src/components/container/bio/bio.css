@@ -1,0 +1,52 @@
+.orgContainerBio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bio{
+    background-color: rgb(181, 179, 187); 
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 65vw;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+.orgBio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cv{
+    background-color: rgb(181, 179, 187); 
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 65vw;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+    margin-top: 2rem;
+    padding-bottom: 1.6rem;
+}
+
+.icono{
+    width: 4.5rem;
+    padding-left: 0.7rem;
+}
+
+.redes{
+    background-color: rgb(181, 179, 187); 
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 65vw;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 8px 13px rgba(183, 182, 194, 0.3);
+    margin-top: 2rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 4rem;
+}

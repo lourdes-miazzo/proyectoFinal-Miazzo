@@ -1,10 +1,16 @@
 import React from 'react'
+import './bio.css'
+import imgBio from './color.jpg'
+import iconoInsta from './instagram.png'
+import iconoFaceb from './facebook.png'
 
 const Bio = () => {
-  return (
+return (
     <>
+    <div className='orgContainerBio'>
     <div className='bio'>
         <h3>Bio</h3>
+        <div className='orgBio'>
         <p>
             Estudió Licenciatura en Pintura en la Facultad de Artes de la Universidad Nacional de Córdoba.
             Realizó
@@ -25,7 +31,8 @@ const Bio = () => {
             resultados
             estéticos interesantes y a la vez sorpresivos”
         </p>
-        <img src="imagenes/color.jpg" alt="imagen de la artista junto a su obra"></img>
+        <img src={imgBio} alt="imagen de la artista junto a su obra"></img>
+        </div>
     </div>
     <div className='cv'>
         <h3>CV</h3>
@@ -41,6 +48,9 @@ const Bio = () => {
             </div>
         <p>grupal:</p>
             <div>
+                <p>Arte contemporáneo femenino, De Arte Trastienda, 2022-2023</p>
+                <p>Popurrí 25 artistas,Galería Marchiaro, 2022</p>
+                <p>Artistas de Córdoba 1960|2022, Galería Tierra Arte Contemporáneo, 2022</p>
                 <p>-Orquesta, 220 centro cultural, 2021</p>
                 <p>-Feria de Arte Cordoba, Galería Marchiaro, 2021</p>
                 <p>-Abstracciones/ 9 Abordajes, Galería Marchiaro, 2019</p>
@@ -60,12 +70,14 @@ const Bio = () => {
                 <p>-XXXV edición Salón y Premio Ciudad de Córdoba, Cabildo de Córdoba, 2016</p>
             </div>
     </div>
-    <div>
-        <h3>Contacto</h3>
-
+    <div className='redes'>
+        <h3>Redes Sociales</h3>
+        <a href="https://www.instagram.com/lourdesmiazzo/" target="blank"><img src={iconoInsta} alt="icono de instagram version gráfica" className='icono'></img></a>
+        <a href="https://www.facebook.com/analourdes.miazzo/" target="blank"><img  src={iconoFaceb} alt="icono de facebook version gráfica" className='icono'></img></a>
+    </div>
     </div>
     </>
-  )
+)
 }
 
 export default Bio

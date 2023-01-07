@@ -6,7 +6,7 @@ import SquareLoader from "react-spinners/SquareLoader";
 import {getFirestore, getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
-  const [data, setData]= useState({})
+  const [detail, setDetail]= useState({})
 
   /*cuando loading está en true se renderiza la animación y cuando se obtienen los datos de firestore
    vuelve a false para que los datos obtenidos se rendericen a través de ItemDetail */
@@ -15,17 +15,15 @@ const ItemDetailContainer = () => {
   //deteccion dinámica de parámetro id para poder mostrar el detalle de una obra 
   const {id}= useParams()  
 
-
   useEffect(()=>{
     setLoading(true)
-    const baseDatos = getFirestore()
-    const detalleobra = doc(baseDatos,'obras', id)
-    setLoading(false)
-    getDoc(detalleobra).then((snapshot)=>{
-      setData({id : snapshot.id, ...snapshot.data()})
+    const db = getFirestore()
+    const itemRef = doc(db,'obras', id)
+    getDoc(itemRef).then((snapshot)=>{
+      setDetail({id : snapshot.id, ...snapshot.data()})
     }) 
+    setLoading(false)
   }, [id])
-
 
   return (
     <>
@@ -38,7 +36,7 @@ const ItemDetailContainer = () => {
       </div>
       :
       <div>
-        <ItemDetail data={data} /> 
+        <ItemDetail data={detail} /> 
       </div>
     }
     </>

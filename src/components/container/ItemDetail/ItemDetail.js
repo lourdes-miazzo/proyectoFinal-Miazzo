@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "./itemDetail.css"
-import ItemCount from '../itemCount/ItemCount'
+import ItemQuantitySelector from '../itemQuantitySelector/ItemQuantitySelector'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../../context/CartContext'
 
@@ -35,10 +35,12 @@ const ItemDetail = ({data}) => {
             {
               enviarACarrito 
               ? 
-              <div><Link to="/cart"><button>Finalizar tu compra</button></Link>
-              <Link to="/"><button>Continuar comprando</button></Link> </div>
+              <div>
+                <Link to="/cart"><button>Finalizar tu compra</button></Link>
+                <Link to="/"><button>Continuar comprando</button></Link> 
+              </div>
               : 
-              <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>
+              <ItemQuantitySelector initial={1} stock={data.stock} onAdd={onAdd}/>
             }
         </div>
       </div>

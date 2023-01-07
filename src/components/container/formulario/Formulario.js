@@ -22,7 +22,7 @@ const Formulario = () => {
 
     let fechaActual = new Date()
 
-    //en orden se fusionan en un objeto los datos del comprador recientemente captados, con la info de las obras compradas, fecha y el precio total y se envían a firestore, obteniendo un id
+    //en orden se fusionan en un objeto los datos del comprador recientemente captados, con la info de las obras compradas, fecha y el precio total y se envían a firestore, obteniendo un id de compra
     const orden = {
         comprador: form,
         obras: cart.map(obra=> ({id: obra.id, titulo: obra.titulo, precioIndividual: obra.precio, cantidad: obra.quantity})),
@@ -48,7 +48,7 @@ const Formulario = () => {
 
     //se setean en form los datos del comprador captados a traves de los e.target, en los input del formulario
     const changeHandler =(e) =>{
-        const {value, name}=e.target
+        const {value, name}= e.target
         setForm({...form, [name]: value})
     } 
 

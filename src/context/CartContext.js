@@ -33,8 +33,8 @@ const CartProvider = ({children}) => {
     con el id seleccionado, por lo que ese id y esa obra quedan fuera del nuevo array, por lo tanto eliminados */
     const removeArt = (id)=> setCart(cart.filter(data => data.id !== id))
 
-    /* si el id de obra coincide con el id seleccionado se le resta a la cantidad 1, se copia toda la data igual
-    a como estaba antes y sobre la cantidad se resta 1 */
+    /* si el id de obra coincide con el id seleccionado se le resta a la cantidad 1 y se copia toda la data extra igual
+    a como estaba antes */
     const removerUnidad = (id)=> setCart(cart.map((data) =>{
       if(data.id === id){
         return {...data, quantity: data.quantity -1}
