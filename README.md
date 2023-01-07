@@ -7,8 +7,6 @@
 **_Realizado con_**:
 
 ![logo React](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png)  
- ![vercel](https://user-images.githubusercontent.com/105647455/204139366-0c6f2575-48dc-45ce-b995-a42574e4e765.png)
-
 
 
 **_Resumen_**: Proyecto realizado en el aprendizaje de React JS de la trayectoria Fullstack cursada en [**CoderHouse**](https://www.coderhouse.com/).  El ejercicio final proponía la creación de un e-commerce por lo que se le da un énfasis especial al carrito de compras y en mostrar, en este caso, las obras según los años de produccion. Se incluye además una pequeña sección con bio y redes sociales de la artista para quienes deseen conocer sobre su recorrido y ver más imagenes de su producción.
