@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from './components/container/itemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './components/container/itemListContainer/ItemListContainer';
+import ItemListContainer from './components/container/itemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/container/itemDetailContainer/ItemDetailContainer'
 import Error404 from './components/container/error404/Error404';
 import Bio from './components/container/bio/Bio';
 import NavBar from './components/navBar/NavBar';
