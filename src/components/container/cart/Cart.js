@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useCartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
-import ItemCart from './../itemCart/ItemCart'
+import ItemCart from '../ItemCart/ItemCart'
 import './cart.css'
 import Formulario from '../formulario/Formulario'
 

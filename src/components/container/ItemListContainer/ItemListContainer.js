@@ -1,6 +1,6 @@
 import "./itemListContainer.css"
 import React, {useState, useEffect} from "react"
-import ItemList from "../itemList/ItemList"
+import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom" 
 import {getDocs, getFirestore, collection} from 'firebase/firestore'
 import SquareLoader from "react-spinners/SquareLoader";
