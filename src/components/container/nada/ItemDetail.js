@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "./itemDetail.css"
-import ItemQuantitySelector from '../itemQuantitySelector/ItemQuantitySelector'
+import ItemQuantitySelector from './ItemQuantitySelector'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../../context/CartContext'
 
